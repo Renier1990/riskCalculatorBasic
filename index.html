@@ -74,6 +74,8 @@
                 <option value="100">MCL - Crude Oil Micro</option>
                 <option value="100">GC - Gold Futures</option>
                 <option value="10">MGC - Micro Gold Futures</option>
+                <option value="5000">SI - Silver Futures</option>
+                <option value="1000">SIL - Micro Silver Futures</option>
             </select><br>
             
             <label for="contracts">Number of Contracts:</label>
@@ -116,8 +118,8 @@
         var lossAmount = stopLossPoints * contractMultiplier * contracts;
         var profitAmount = takeProfitPoints * contractMultiplier * contracts;
 
-        var resultMessage = "<p><strong>Loss Amount ($):</strong> $" + lossAmount.toFixed(2) + "</p>";
-        resultMessage += "<p><strong>Profit Amount ($):</strong> $" + profitAmount.toFixed(2) + "</p>";
+        var resultMessage = `<p><strong style="color: red;">Loss Amount ($):</strong> $${lossAmount.toFixed(2)}</p>`;
+        resultMessage += `<p><strong style="color: green;">Profit Amount ($):</strong> $${profitAmount.toFixed(2)}</p>`;
 
         document.getElementById('result').innerHTML = resultMessage;
     }
